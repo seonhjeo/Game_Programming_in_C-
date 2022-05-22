@@ -1,7 +1,8 @@
-#ifndef GAME_HPP
-#define GAME_HPP
+#ifndef GAME_H
+#define GAME_H
 
-#include "SDL.h"
+#include <SDL.h>
+#include "Vector2.h"
 
 class Game
 {
@@ -21,8 +22,18 @@ private:
 
 	// SDL이 생성한 윈도우
 	SDL_Window* mWindow;
+	// 그래픽을 렌더링할 렌더러
+	SDL_Renderer* mRenderer;
 	// 게임이 계속 실행되야 하는지를 판단
 	bool mIsRunning;
+
+	Uint32 mTicksCount;
+
+	Vector2 mBallPos; // 공 위치
+	Vector2 mPaddlePos; // 패들 위치
+	Vector2 mBallVel; // 공 속도
+
+	int mPaddleDir;
 };
 
 #endif
