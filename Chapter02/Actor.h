@@ -12,7 +12,7 @@
 class Actor
 {
 public:
-	enum class State
+	enum State
 	{
 		EActive,
 		EPaused,
